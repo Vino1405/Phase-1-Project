@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Sign In & Sign Up</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="https://www.claysys.com/app/themes/claysys-2019/assets/images/claysys-logo.png"></img>
+            </div>
+            <div class="nav-menu">
+                <ul id="nav-links">
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="Contact.html" class="link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <div class="form-box">
+            <div class="login-container" id="login">
+                <div class="top">
+                    <header>Sign In</header>
+                </div>
+                <form onsubmit="return validateLogin()">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Username or Email">
+                        <i class="bx bx-user"></i>
+                        <span id="usernameEmailError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
+                        <span id="passwordError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Forgot password?</a></label>
+                        </div>
+                    </div>
+                    <div class="bottom-text">
+                        <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="register-container" id="register">
+                <div class="top">
+                    <header>Sign Up</header>
+                </div>
+                <form onsubmit="return validateRegister()">
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="FirstName">
+                            <i class="bx bx-user"></i>
+                            <span id="firstNameError" class="error-message" style="color:red;"></span>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="LastName">
+                            <i class="bx bx-user"></i>
+                            
+                            <span id="lastNameError" class="error-message" style="color:red;"></span>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" placeholder="Email">
+            
+                        <i class="bx bx-envelope"></i>
+                        <span id="emailError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <select id="gender" class="input-field">
+                            <option value="">Select Gender</option>                        
+                            <option value="Male">Male</option>                        
+                            <option value="Female">Female</option>                        
+                            <option value="Others">Others</option>      
+                            </select>                 
+                            <i class="bx bx-male-female"></i>
+                        <span id="genderError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" id="dateOfBirth" class="input-field" placeholder="DateOfBirth" onfocusout="">
+                        <i class="bx bx-calendar"></i>
+                        <span id="dobError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text"id="age" class="input-field" placeholder="Age" disabled>
+                        <i class="bx bx-calendar"></i>
+                        <span id="ageError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <select id="state" class="input-field" onchange="populateCities()"onfocusout="">
+                            <option value="">Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>                        
+                        <i class="bx bx-map"></i>
+                        <span id="stateError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <select id="city" class="input-field">
+                            <i class="bx bx-user"></i>
+                            <option value="">Select City</option>
+                        </select>
+                        <i class="bx bx-map-pin"></i>
+                        <span id="cityError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password">
+                       
+                        <i class="bx bx-lock-alt"></i>
+                        <span id="passwordRegisterError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Confirm Password">
+                     
+                        <i class="bx bx-lock-alt"></i>
+                        <span id="confirmPasswordError" class="error-message" style="color:red;"></span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register">
+                    </div>
+                    <div class="bottom-text">
+                        <span>Already have an account? <a href="#" onclick="login()">Sign In</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-logo">
+                <img src="https://www.claysys.com/app/themes/claysys-2019/assets/images/claysys-logo.png" alt="ClaySys Logo">
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="Contact.html" class="link active">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="location.href='index.html';">Sign In</button>
+                <button class="btn white-btn" id="registerBtn" onclick="location.href='index.html';">Sign Up</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <div class="card">
+            <section class="contact">
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="name" class="input-field" placeholder="Your Name" id="name" >
+                                <span id="nameError" class="error" style="color:red"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="input-field" placeholder="Your email" id="email">
+                                <span id="emailError" class="error" style="color:red"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="message" class="input-field" placeholder="Your message" id="message" ></textarea>
+                                <span id="messageError" class="error" style="color:red"></span>
+                            </div>
+                            <button type="submit">Send message</button>
+                        </form>
+                    </div>
+                    <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.392377181455!2d76.94822407326771!3d11.00915875486139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ff537c14fd%3A0x335e73d2c3470cc!2sClaySys%20Technologies!5e0!3m2!1sen!2sin!4v1719416052418!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="contact.js"> </script>
+</body>
+
+</html>
